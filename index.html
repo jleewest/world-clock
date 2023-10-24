@@ -9,13 +9,38 @@
   <body>
     <div class="container">
       <h1>World Clock</h1>
+      <select name="city" id="citySelect">
+        <option value="" name="city">Select a city</option>
+        <option value="san francisco" name="city">San Francisco</option>
+        <option value="paris" name="city">Paris</option>
+        <option value="berlin" name="city">Berlin</option>
+      </select>
+
+      <div class="city">
+        <h2>San Francisco</h2>
+        <div class="date">October 24, 2023</div>
+        <div class="time">1:48:15 PM</div>
+      </div>
+
+      <div class="city">
+        <h2>Paris</h2>
+        <div class="date">October 24, 2023</div>
+        <div class="time">1:48:15 PM</div>
+      </div>
+
+      <div class="city">
+        <h2>Berlin</h2>
+        <div class="date">October 24, 2023</div>
+        <div class="time">1:48:15 PM</div>
+      </div>
+
       <footer>
         <a href="https://github.com/jleewest" class="code-link" target="blank"
           >Open Source Code</a
         >
         by Jenna Westendorf
       </footer>
-      <script src="src/index.js"></script>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
