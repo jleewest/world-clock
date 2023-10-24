@@ -1,28 +1,24 @@
-let cities = ['sanFrancisco', 'paris', 'sydney'];
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.split('/')[1].replace('Pacific', 'San Francisco');
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector('#cities');
+  citiesElement.innerHTML = `
+	<div class="city">
+	<div>
+	<h2>${cityName}</h2>
+	<div class="date">${cityTime.format('LL')}</div>
+	</div>
+	<div class="time">${cityTime.format('h:mm:ss [<small>] A [</small>]')}</div>
+		</div>
+		`;
 
-function formatClock(city) {
-  let timeZone;
-
-  if (city === 'sanFrancisco') {
-    timeZone = 'US/Pacific';
-  } else if (city === 'paris') {
-    timeZone = 'Europe/Paris';
-  } else if (city === 'sydney') {
-    timeZone = 'Australia/Sydney';
-  }
-
-  let setDate = document.querySelector(`#${city} .date`);
-  setDate.innerHTML = moment().tz(timeZone).format('LL');
-
-  function updateClock() {
-    let setTime = document.querySelector(`#${city} .time`);
-    setTime.innerHTML = moment()
-      .tz(timeZone)
-      .format('h:mm:ss [<small>] A [</small>]');
-  }
-
-  updateClock();
-  setInterval(updateClock, 1000);
+  setInterval(function () {
+    let updateCityTime = moment().tz(cityTimeZone);
+    let setTime = document.querySelector(`.time`);
+    setTime.innerHTML = updateCityTime.format('h:mm:ss [<small>] A [</small>]');
+  }, 1000);
 }
 
-cities.forEach(formatClock);
+let citiesSelectElement = document.querySelector('#city-select');
+citiesSelectElement.addEventListener('change', updateCity);

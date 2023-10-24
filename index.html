@@ -11,36 +11,13 @@
   <body>
     <div class="container">
       <h1>World Clock</h1>
-      <select name="city" id="citySelect">
+      <select name="city" id="city-select">
         <option value="" name="city">Select a city</option>
-        <option value="san francisco" name="city">San Francisco</option>
-        <option value="paris" name="city">Paris</option>
-        <option value="sydney" name="city">Sydney</option>
+        <option value="US/Pacific" name="city">San Francisco</option>
+        <option value="Europe/Paris" name="city">Paris</option>
+        <option value="Australia/Sydney" name="city">Sydney</option>
       </select>
-
-      <div class="city" id="sanFrancisco">
-        <div>
-          <h2>San Francisco</h2>
-          <div class="date"></div>
-        </div>
-        <div class="time"></div>
-      </div>
-
-      <div class="city" id="paris">
-        <div>
-          <h2>Paris</h2>
-          <div class="date"></div>
-        </div>
-        <div class="time"></div>
-      </div>
-
-      <div class="city" id="sydney">
-        <div>
-          <h2>Sydney</h2>
-          <div class="date"></div>
-        </div>
-        <div class="time"></div>
-      </div>
+      <div id="cities"></div>
       <footer>
         <a href="https://github.com/jleewest" class="code-link" target="blank"
           >Open Source Code</a
