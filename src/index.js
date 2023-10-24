@@ -1,6 +1,12 @@
 function updateCity(event) {
   let cityTimeZone = event.target.value;
-  let cityName = cityTimeZone.split('/')[1].replace('Pacific', 'San Francisco');
+  if (cityTimeZone === 'current') {
+    cityTimeZone = moment.tz.guess();
+  }
+  let cityName = cityTimeZone
+    .split('/')[1]
+    .replace('Pacific', 'San Francisco')
+    .replace('_', ' ');
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector('#cities');
   citiesElement.innerHTML = `
