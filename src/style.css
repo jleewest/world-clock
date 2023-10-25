@@ -1,7 +1,7 @@
 body {
   background-image: url('../images/clock.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   margin: 60px auto;
 }
 
@@ -70,4 +70,38 @@ footer {
 .code-link {
   font-weight: 800;
   text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 26px;
+    margin: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  select {
+    font-size: 14px;
+    padding: 3px;
+  }
+
+  .container {
+    max-width: 250px;
+  }
+
+  .city {
+    flex-direction: column-reverse;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .date {
+    font-size: 11px;
+  }
+
+  .time {
+    margin: 0 auto 10px;
+  }
 }
