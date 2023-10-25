@@ -5,6 +5,10 @@ function updateCity(event) {
     clearInterval(myInterval);
   }
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === 'search') {
+    location.reload();
+    return;
+  }
   if (cityTimeZone === 'current') {
     cityTimeZone = moment.tz.guess();
   }
@@ -21,8 +25,8 @@ function updateCity(event) {
 	<div class="date">${cityTime.format('LL')}</div>
 	</div>
 	<div class="time">${cityTime.format('h:mm:ss [<small>] A [</small>]')}</div>
-		</div>
-		`;
+	</div>
+	`;
 
   function updateClock() {
     let updateCityTime = moment().tz(cityTimeZone);
